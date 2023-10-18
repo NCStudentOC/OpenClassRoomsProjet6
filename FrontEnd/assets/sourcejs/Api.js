@@ -25,7 +25,7 @@ export async function loginpost(email, password) {
     });
 
     const json = await response.json();
-    window.localStorage.setItem("token", json.token);
+    // window.localStorage.setItem("token", json.token);
 
     return response;
   } catch (error) {
