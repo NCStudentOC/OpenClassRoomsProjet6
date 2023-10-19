@@ -24,9 +24,6 @@ export async function loginpost(email, password) {
       body: JSON.stringify({ email: email, password: password }),
     });
 
-    const json = await response.json();
-    // window.localStorage.setItem("token", json.token);
-
     return response;
   } catch (error) {
     console.log("Une erreur s'est produite lors de l'appel à l'API users/login :", error);

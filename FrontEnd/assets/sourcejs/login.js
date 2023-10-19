@@ -24,8 +24,8 @@ export async function login() {
 
 
     if (response.ok) {
-      const token = await response.json;
-      window.localStorage.setItem("token", token);
+      const json = await response.json();
+      window.localStorage.setItem("token", json.token);
       directionHome();
 
     } else {

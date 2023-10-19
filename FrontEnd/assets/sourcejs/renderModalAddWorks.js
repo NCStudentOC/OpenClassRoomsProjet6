@@ -273,6 +273,7 @@ async function addWorks() {
             method: "POST",
             headers: {
                 Authorization: `Bearer ${token}`,
+
             },
             body: formData,
         });
