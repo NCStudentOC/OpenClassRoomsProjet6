@@ -192,7 +192,7 @@ export function displayModalTwo() {
     modalWrapper.appendChild(erreurAdd)
 
     const erreurFormat = document.createElement("p");
-    erreurFormat.classList.add("color_message2")
+    erreurFormat.classList.add("color_message")
     erreurFormat.innerHTML = "selectionner un fichier valide JPG ou PNG ";
     modalWrapper.appendChild(erreurFormat)
 
@@ -334,6 +334,9 @@ async function sendNewWork() {
 
             reussiteAdd.style.display = "block";
             modalButton[0].classList.add("valide_btn_active");
+            erreurAdd.style.display = "none";
+            erreurFormat.style.display = "none";
+
             refreshModal()
 
 
@@ -390,12 +393,13 @@ const titleInput = document.getElementById("title");
 const selectInput = document.getElementById("Categorie");
 const modalButton = document.getElementsByClassName("valide_btn", "valide_btn_active");
 const erreurAdd = document.querySelector(".color_message2")
-
+const erreurFormat = document.querySelector(".color_message")
 
 // Ajoutécouteur d'événements aux champs d'entrée
 photoInput.addEventListener("input", updateButtonState);
 titleInput.addEventListener("input", updateButtonState);
 selectInput.addEventListener("input", updateButtonState);
+
 
 async function updateButtonState() {
 
@@ -409,7 +413,9 @@ async function updateButtonState() {
         // Activez le bouton
 
         modalButton[0].classList.add("valide_btn_active");
-        erreurAdd.style.opacity = "0";
+        erreurAdd.style.display = "none";
+        erreurFormat.style.display = "none"
+
     }
 }
 
